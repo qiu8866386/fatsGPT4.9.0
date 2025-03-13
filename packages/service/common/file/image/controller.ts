@@ -5,8 +5,6 @@ import { ClientSession, Types } from '../../../common/mongo';
 import { guessBase64ImageType } from '../utils';
 import { readFromSecondary } from '../../mongo/utils';
 import { addHours } from 'date-fns';
-import { imageFileType } from '@fastgpt/global/common/file/constants';
-import { retryFn } from '@fastgpt/global/common/system/utils';
 
 export const maxImgSize = 1024 * 1024 * 12;
 const base64MimeRegex = /data:image\/([^\)]+);base64/;
@@ -27,33 +25,28 @@ export async function uploadMongoImg({
   const [base64Mime, base64Data] = base64Img.split(',');
   // Check if mime type is valid
   if (!base64MimeRegex.test(base64Mime)) {
-    return Promise.reject('Invalid image base64');
+    return Promise.reject('Invalid image mime type');
   }
 
   const mime = `image/${base64Mime.match(base64MimeRegex)?.[1] ?? 'image/jpeg'}`;
   const binary = Buffer.from(base64Data, 'base64');
-  let extension = mime.split('/')[1];
-  if (extension.startsWith('x-')) {
-    extension = extension.substring(2); // Remove 'x-' prefix
-  }
+  const extension = mime.split('/')[1];
 
-  if (!extension || !imageFileType.includes(`.${extension}`)) {
-    return Promise.reject(`Invalid image file type: ${mime}`);
-  }
+  const { _id } = await MongoImage.create({
+    teamId,
+    binary,
+    metadata: Object.assign({ mime }, metadata),
+    shareId,
+    expiredTime: forever ? undefined : addHours(new Date(), 1)
+  });
 
-  const { _id } = await retryFn(() =>
-    MongoImage.create({
-      teamId,
-      binary,
-      metadata: Object.assign({ mime }, metadata),
-      shareId,
-      expiredTime: forever ? undefined : addHours(new Date(), 1)
-    })
-  );
+//   return `${process.env.NEXT_PUBLIC_BASE_URL || ''}${imageBaseUrl}${String(_id)}.${extension}`;
+// }
 
-  return `${process.env.NEXT_PUBLIC_BASE_URL || ''}${imageBaseUrl}${String(_id)}.${extension}`;
+  // 确保 IP 和端口号在路径中
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL?.replace(/\/$/, '') || 'http://192.168.1.7:3000';
+  return `${baseUrl}${imageBaseUrl}${String(_id)}.${extension}`;
 }
-
 const getIdFromPath = (path?: string) => {
   if (!path) return;
 
@@ -121,7 +114,7 @@ export async function delImgByRelatedId({
 }: {
   teamId: string;
   relateIds: string[];
-  session?: ClientSession;
+  session: ClientSession;
 }) {
   if (relateIds.length === 0) return;
 
