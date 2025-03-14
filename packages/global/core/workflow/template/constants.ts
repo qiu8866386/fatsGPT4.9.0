@@ -49,7 +49,7 @@ const systemNodes: FlowNodeTemplateType[] = [
   ReadFilesNode,
   HttpNode468,
   AiQueryExtension,
-  LafModule,
+  // LafModule,
   IfElseNode,
   VariableUpdateNode,
   CodeNode,

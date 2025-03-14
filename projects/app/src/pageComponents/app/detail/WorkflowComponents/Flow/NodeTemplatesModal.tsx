@@ -370,7 +370,7 @@ const RenderHeader = React.memo(function RenderHeader({
               <MyIcon name={'common/rightArrowLight'} w={'0.8rem'} />
             </Flex>
           )}
-          {templateType === TemplateTypeEnum.systemPlugin && feConfigs.systemPluginCourseUrl && (
+          {/* {templateType === TemplateTypeEnum.systemPlugin && feConfigs.systemPluginCourseUrl && (
             <Flex
               alignItems={'center'}
               cursor={'pointer'}
@@ -384,7 +384,7 @@ const RenderHeader = React.memo(function RenderHeader({
               <Box>{t('common:plugin.contribute')}</Box>
               <MyIcon name={'common/rightArrowLight'} w={'0.8rem'} />
             </Flex>
-          )}
+          )} */}
         </Flex>
       )}
       {/* paths */}

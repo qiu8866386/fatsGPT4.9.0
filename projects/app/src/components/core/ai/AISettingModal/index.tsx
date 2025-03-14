@@ -126,7 +126,7 @@ const AIChatSettingsModal = ({
       title={
         <HStack>
           <Box>{t('app:ai_settings')}</Box>
-          {feConfigs?.docUrl && (
+          {/* {feConfigs?.docUrl && (
             <MyIcon
               name="book"
               color={'primary.600'}
@@ -136,7 +136,7 @@ const AIChatSettingsModal = ({
                 window.open(getDocPath('/docs/guide/course/ai_settings/'), '_blank');
               }}
             />
-          )}
+          )} */}
         </HStack>
       }
       w={'500px'}
@@ -169,7 +169,7 @@ const AIChatSettingsModal = ({
           <Table fontSize={'xs'} overflow={'overlay'}>
             <Thead>
               <Tr bg={'transparent !important'} color={'myGray.600'}>
-                <Th fontSize={'mini'} pb={2}>
+                {/* <Th fontSize={'mini'} pb={2}>
                   <HStack spacing={1}>
                     <Box> {t('app:ai_point_price')}</Box>
                     <ModelPriceModal>
@@ -178,7 +178,7 @@ const AIChatSettingsModal = ({
                       )}
                     </ModelPriceModal>
                   </HStack>
-                </Th>
+                </Th> */}
                 <Th fontSize={'mini'} pb={2}>
                   {t('common:core.ai.Max context')}
                 </Th>

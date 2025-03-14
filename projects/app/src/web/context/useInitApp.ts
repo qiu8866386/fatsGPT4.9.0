@@ -29,12 +29,12 @@ export const useInitApp = () => {
     setTitle(systemTitle || '知识库管理平台');
 
     // log fastgpt
-    if (!isPlus) {
-      console.log(
-        '%cWelcome to 知识库管理平台',
-        'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;'
-      );
-    }
+    // if (!isPlus) {
+    //   console.log(
+    //     '%cWelcome to 知识库管理平台',
+    //     'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;'
+    //   );
+    // }
 
     loadGitStar();
 
