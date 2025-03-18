@@ -85,12 +85,12 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
     <MyBox
       isLoading={isLoading}
       display={'flex'}
-      flexDirection={'column'}
+      flexDirection={'column'} //解释：flexDirection属性用于设置主轴方向，即水平方向。
       w={'100%'}
       h={'100%'}
-      bg={'white'}
-      borderRight={['', theme.borders.base]}
-      whiteSpace={'nowrap'}
+      bg={'#f6f6f6'}
+      // borderRight={['', theme.borders.base]} //解释：仅在非手机端时显示边框
+      whiteSpace={'nowrap'} //解释：禁止文本换行
     >
       {isPc && (
         <MyTooltip label={canRouteToDetail ? t('app:app_detail') : ''} offset={[0, 0]}>
@@ -138,12 +138,21 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
         <Button
           variant={'whitePrimary'}
           flex={['0 0 auto', 1]}
+          bg={'#f6f6f6'}
           h={'100%'}
           px={6}
-          color={'primary.600'}
-          borderRadius={'xl'}
+          borderRadius={'none'}
+          color={'#000'}
+          // 设置hover 样式
+          sx={{
+            overflow: 'hidden',
+            '&:hover': {
+              color: '#000', // 鼠标悬停时的颜色
+              backgroundColor: '#ececec',
+              borderColor: '#ececec'
+            }
+          }}
           leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
-          overflow={'hidden'}
           onClick={() => onChangeChatId()}
         >
           {t('common:core.chat.New Chat')}
@@ -191,10 +200,11 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
                 }
               }}
               bg={item.top ? '#E6F6F6 !important' : ''}
+              // 修改历史对话记录背景颜色和字体颜色
               {...(item.id === activeChatId
                 ? {
-                    backgroundColor: 'primary.50 !important',
-                    color: 'primary.600'
+                    backgroundColor: '#f6f6f !important',
+                    color: '#000'
                   }
                 : {
                     onClick: () => {

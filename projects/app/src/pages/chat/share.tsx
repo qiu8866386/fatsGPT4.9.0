@@ -244,8 +244,9 @@ const OutLink = (props: Props) => {
       <PageContainer
         isLoading={loading}
         {...(isEmbed
-          ? { p: '0 !important', insertProps: { borderRadius: '0', boxShadow: 'none' } }
-          : { p: [0, 5] })}
+          ? //取消页面内边距和圆角
+            { p: '0 !important', insertProps: { borderRadius: '0', boxShadow: 'none' } }
+          : { p: [0, 0], insertProps: { borderRadius: '0', boxShadow: 'none' } })}
       >
         <Flex h={'100%'} flexDirection={['column', 'row']}>
           {RenderHistoryList}

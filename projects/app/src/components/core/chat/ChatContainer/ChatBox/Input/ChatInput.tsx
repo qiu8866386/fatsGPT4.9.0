@@ -437,7 +437,10 @@ const ChatInput = ({
     <Box
       m={['0 auto', '10px auto']}
       w={'100%'}
-      maxW={['auto', 'min(800px, 100%)']}
+      // 输入框长度设置
+      maxW={['auto', 'min(90%, 100%)']}
+      // 设置底部外边距
+      p={[10, 10]}
       px={[0, 5]}
       onDragOver={(e) => e.preventDefault()}
       onDrop={(e) => {

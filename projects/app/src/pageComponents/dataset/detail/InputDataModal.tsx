@@ -90,7 +90,7 @@ const InputDataModal = ({
       label: (
         <Flex align={'center'}>
           <Box>{t('common:dataset.data.edit.Index', { amount: indexes.length })}</Box>
-          <MyTooltip label={t('common:core.app.tool_label.view_doc')}>
+          {/* <MyTooltip label={t('common:core.app.tool_label.view_doc')}>
             <MyIcon
               name={'book'}
               w={'1rem'}
@@ -105,7 +105,7 @@ const InputDataModal = ({
                 cursor: 'pointer'
               }}
             />
-          </MyTooltip>
+          </MyTooltip> */}
         </Flex>
       ),
       value: TabEnum.index
