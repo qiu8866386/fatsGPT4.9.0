@@ -426,7 +426,7 @@
   "core.chat.Send Message": "发送",
   "core.chat.Speaking": "我在听，请说...",
   "core.chat.Start Chat": "开始对话",
-  "core.chat.Type a message": "输入问题，发送 [Enter]/换行 [Ctrl(Alt/Shift) + Enter]",
+  "core.chat.Type a message": "输入消息",
   "core.chat.Unpin": "取消置顶",
   "core.chat.You need to a chat app": "你没有可用的应用",
   "core.chat.error.Chat error": "对话出现异常",

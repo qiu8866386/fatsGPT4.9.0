@@ -206,8 +206,7 @@ const CreateModal = ({
             </Flex>
           )}
         </Flex> */}
-        <Box mt={[4, 7]}>
-        </Box>
+        <Box mt={[4, 7]}></Box>
         {isTemplateMode ? (
           <Grid
             userSelect={'none'}

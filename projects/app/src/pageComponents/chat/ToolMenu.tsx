@@ -30,17 +30,18 @@ const ToolMenu = ({ history }: { history: ChatItemType[] }) => {
         />
       }
       menuList={[
-        {
-          children: [
-            {
-              icon: 'core/chat/chatLight',
-              label: t('common:core.chat.New Chat'),
-              onClick: () => {
-                onChangeChatId();
-              }
-            }
-          ]
-        },
+        // 新对话
+        // {
+        //   children: [
+        //     {
+        //       icon: 'core/chat/chatLight',
+        //       label: t('common:core.chat.New Chat'),
+        //       onClick: () => {
+        //         onChangeChatId();
+        //       }
+        //     }
+        //   ]
+        // },
         {
           children: [
             // {

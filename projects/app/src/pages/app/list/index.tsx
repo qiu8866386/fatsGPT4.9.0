@@ -150,7 +150,7 @@ const MyApps = () => {
                 {
                   label: t('app:type.All'),
                   value: 'ALL'
-                },
+                }
                 // {
                 //   label: t('app:type.Simple bot'),
                 //   value: AppTypeEnum.simple
@@ -235,7 +235,7 @@ const MyApps = () => {
                         label: t('app:type.Workflow bot'),
                         description: t('app:type.Create workflow tip'),
                         onClick: () => setCreateAppType(AppTypeEnum.workflow)
-                      },
+                      }
                       // {
                       //   icon: 'core/app/type/pluginFill',
                       //   label: t('app:type.Plugin'),
@@ -249,7 +249,7 @@ const MyApps = () => {
                       //   onClick: onOpenCreateHttpPlugin
                       // }
                     ]
-                  },
+                  }
                   // {
                   //   children: [
                   //     {

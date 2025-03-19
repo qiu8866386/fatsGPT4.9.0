@@ -41,7 +41,7 @@ const OutLink = () => {
       desc: t('common:core.app.Api request desc'),
       value: PublishChannelEnum.apikey,
       isProFn: false
-    },
+    }
     // {
     //   icon: 'core/app/publish/lark',
     //   title: t('publish:feishu_bot'),

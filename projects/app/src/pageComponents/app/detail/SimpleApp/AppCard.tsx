@@ -102,7 +102,8 @@ const AppCard = ({
           <Button
             size={['sm', 'md']}
             variant={'whitePrimary'}
-            leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
+            //新对话图标
+            // leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
             onClick={() => router.push(`/chat?appId=${appId}`)}
           >
             {t('common:core.Chat')}

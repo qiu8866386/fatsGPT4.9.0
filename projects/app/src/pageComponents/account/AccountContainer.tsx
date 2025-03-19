@@ -112,7 +112,7 @@ const AccountContainer = ({
             value: TabEnum.inform
           }
         ]
-      : []),
+      : [])
     // {
     //   icon: 'common/settingLight',
     //   label: t('common:common.Setting'),
@@ -196,4 +196,3 @@ const AccountContainer = ({
 };
 
 export default AccountContainer;
-

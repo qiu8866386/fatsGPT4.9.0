@@ -366,11 +366,7 @@ const ChatInput = ({
               w={['28px', '32px']}
               borderRadius={'md'}
               bg={
-                isSpeaking || isChatting
-                  ? ''
-                  : !havInput || hasFileUploading
-                    ? '#E5E5E5'
-                    : 'primary.500'
+                isSpeaking || isChatting ? '' : !havInput || hasFileUploading ? '#E5E5E5' : '#000'
               }
               cursor={havInput ? 'pointer' : 'not-allowed'}
               lineHeight={1}

@@ -152,7 +152,8 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
               borderColor: '#ececec'
             }
           }}
-          leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
+          //新对话图标
+          // leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
           onClick={() => onChangeChatId()}
         >
           {t('common:core.chat.New Chat')}
@@ -189,7 +190,8 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
               cursor={'pointer'}
               userSelect={'none'}
               borderRadius={'md'}
-              fontSize={'sm'}
+              //历史对话记录字体大小
+              fontSize={'16px'}
               _hover={{
                 bg: 'myGray.50',
                 '& .more': {
@@ -215,10 +217,10 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
                 mb: '8px'
               })}
             >
-              <MyIcon
+              {/* <MyIcon
                 name={item.id === activeChatId ? 'core/chat/chatFill' : 'core/chat/chatLight'}
                 w={'16px'}
-              />
+              /> */}
               <Box flex={'1 0 0'} ml={3} className="textEllipsis">
                 {item.customTitle || item.title}
               </Box>

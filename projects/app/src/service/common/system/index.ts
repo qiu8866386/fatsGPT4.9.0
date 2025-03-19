@@ -58,8 +58,7 @@ const defaultFeConfigs: FastGPTFeConfigsType = {
   appTemplateCourse:
     'https://fael3z0zfze.feishu.cn/wiki/CX9wwMGyEi5TL6koiLYcg7U0nWb?fromScene=spaceOverview',
   systemTitle: '知识库管理平台',
-  concatMd:
-    ' ',
+  concatMd: ' ',
   limit: {
     exportDatasetLimitMinutes: 0,
     websiteSyncLimitMinuted: 0

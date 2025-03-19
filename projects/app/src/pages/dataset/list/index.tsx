@@ -159,7 +159,7 @@ const Dataset = () => {
                           label: t('dataset:common_dataset'),
                           description: t('dataset:common_dataset_desc'),
                           onClick: () => onSelectDatasetType(DatasetTypeEnum.dataset)
-                        },
+                        }
                         // {
                         //   icon: 'core/dataset/externalDatasetColor',
                         //   label: t('dataset:api_file'),
@@ -185,7 +185,7 @@ const Dataset = () => {
                         //   onClick: () => onSelectDatasetType(DatasetTypeEnum.yuque)
                         // }
                       ]
-                    },
+                    }
                     // {
                     //   children: [
                     //     {
