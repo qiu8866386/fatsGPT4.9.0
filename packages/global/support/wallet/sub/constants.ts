@@ -16,8 +16,8 @@ export const subTypeMap = {
     icon: 'core/dataset/datasetLight'
   },
   [SubTypeEnum.extraPoints]: {
-    label: 'support.wallet.subscription.type.extraPoints'
-    // icon: 'core/chat/chatLight'
+    label: 'support.wallet.subscription.type.extraPoints',
+    icon: 'core/chat/chatLight'
   }
 };
 

@@ -26,12 +26,12 @@ export const useInitApp = () => {
       feConfigs: { scripts, isPlus, systemTitle }
     } = await clientInitData();
 
-    setTitle(systemTitle || '知识库管理平台');
+    setTitle(systemTitle || '智能体应用');
 
     // log fastgpt
     // if (!isPlus) {
     //   console.log(
-    //     '%cWelcome to 知识库管理平台',
+    //     '%cWelcome to 智能体应用',
     //     'font-family:Arial; color:#3370ff ; font-size:18px; font-weight:bold;'
     //   );
     // }

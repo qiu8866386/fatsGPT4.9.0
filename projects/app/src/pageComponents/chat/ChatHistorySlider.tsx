@@ -138,22 +138,22 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
         <Button
           variant={'whitePrimary'}
           flex={['0 0 auto', 1]}
-          bg={'#f6f6f6'}
+          bg={'#fff'}
           h={'100%'}
           px={6}
-          borderRadius={'none'}
+          borderRadius={'10px'}
           color={'#000'}
           // 设置hover 样式
           sx={{
             overflow: 'hidden',
             '&:hover': {
               color: '#000', // 鼠标悬停时的颜色
-              backgroundColor: '#ececec',
-              borderColor: '#ececec'
+              backgroundColor: '#fff',
+              borderColor: '#ccc'
             }
           }}
           //新对话图标
-          // leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
+          leftIcon={<MyIcon name={'core/chat/chatLight'} w={'16px'} />}
           onClick={() => onChangeChatId()}
         >
           {t('common:core.chat.New Chat')}
@@ -185,7 +185,8 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
               position={'relative'}
               key={item.id}
               alignItems={'center'}
-              px={4}
+              //取消内边距
+              px={0}
               h={'44px'}
               cursor={'pointer'}
               userSelect={'none'}
@@ -217,11 +218,12 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
                 mb: '8px'
               })}
             >
+              {/* 历史对话记录图标 */}
               {/* <MyIcon
                 name={item.id === activeChatId ? 'core/chat/chatFill' : 'core/chat/chatLight'}
                 w={'16px'}
               /> */}
-              <Box flex={'1 0 0'} ml={3} className="textEllipsis">
+              <Box flex={'1 0 0'} ml={1} className="textEllipsis">
                 {item.customTitle || item.title}
               </Box>
               {!!item.id && (

@@ -85,7 +85,8 @@ const Share = ({ appId }: { appId: string; type: PublishChannelEnum }) => {
           variant={'whitePrimary'}
           colorScheme={'blue'}
           size={['sm', 'md']}
-          {...(shareChatList.length >= 10
+          //修改免密登录的链接数量
+          {...(shareChatList.length >= 1000000
             ? {
                 isDisabled: true,
                 title: t('common:core.app.share.Amount limit tip')
