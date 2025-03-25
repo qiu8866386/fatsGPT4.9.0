@@ -278,9 +278,11 @@ const ChatItem = (props: Props) => {
         >
           <Card
             {...MessageCardStyle}
-            bg={styleMap.bg}
+            // bg={styleMap.bg}
+            // 修改发送框背景颜色
+            bg={'#f9f9f9'}
             borderRadius={styleMap.borderRadius}
-            textAlign={'left'}
+            textAlign={'right'}
           >
             {type === ChatRoleEnum.Human && <HumanContentCard chatValue={value} />}
             {type === ChatRoleEnum.AI && (

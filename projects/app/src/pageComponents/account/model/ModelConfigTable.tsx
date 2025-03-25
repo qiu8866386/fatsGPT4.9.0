@@ -369,7 +369,7 @@ const ModelTable = ({ Tab }: { Tab: React.ReactNode }) => {
                     </HStack>
                   </Th>
                   <Th fontSize={'xs'}>{t('common:model.model_type')}</Th>
-                  {feConfigs?.isPlus && <Th fontSize={'xs'}>{t('common:model.billing')}</Th>}
+                  {/* {feConfigs?.isPlus && <Th fontSize={'xs'}>{t('common:model.billing')}</Th>} */}
                   <Th fontSize={'xs'}>
                     <Box
                       cursor={'pointer'}

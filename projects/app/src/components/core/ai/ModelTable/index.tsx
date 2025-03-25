@@ -244,7 +244,8 @@ const ModelTable = () => {
             <Tr color={'myGray.600'}>
               <Th fontSize={'xs'}>{t('common:model.name')}</Th>
               <Th fontSize={'xs'}>{t('common:model.model_type')}</Th>
-              <Th fontSize={'xs'}>{t('common:model.billing')}</Th>
+              {/* 模型计费 */}
+              {/* <Th fontSize={'xs'}>{t('common:model.billing')}</Th> */}
             </Tr>
           </Thead>
           <Tbody>
@@ -261,7 +262,8 @@ const ModelTable = () => {
                 <Td>
                   <MyTag colorSchema={item.tagColor as any}>{item.typeLabel}</MyTag>
                 </Td>
-                <Td fontSize={'sm'}>{item.priceLabel}</Td>
+                {/* 模型计费 */}
+                {/* <Td fontSize={'sm'}>{item.priceLabel}</Td> */}
               </Tr>
             ))}
           </Tbody>

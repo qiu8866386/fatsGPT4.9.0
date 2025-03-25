@@ -85,39 +85,6 @@ const OutLink = (props: Props) => {
   const chatRecords = useContextSelector(ChatRecordContext, (v) => v.chatRecords);
   const totalRecordsCount = useContextSelector(ChatRecordContext, (v) => v.totalRecordsCount);
   const isChatRecordsLoaded = useContextSelector(ChatRecordContext, (v) => v.isChatRecordsLoaded);
-  const checkAuthToken = () => {
-    const match = document.cookie.match(new RegExp('(^| )FastgptKey=([^;]+)'));
-    const authToken = match ? match[2] : null;
-    console.log('authToken:', authToken);
-
-    if (!authToken) {
-      window.location.href = 'http://192.168.1.99:80/login'; // 为空时跳转
-    }
-  };
-
-  useEffect(() => {
-    // 先执行一次
-    checkAuthToken();
-    // 每 2 分钟检查一次
-    const intervalId = setInterval(checkAuthToken, 60000);
-
-    // 组件卸载时清除定时器
-    return () => clearInterval(intervalId);
-  }, []);
-
-  const updateAuthTokenExpiration = () => {
-    const match = document.cookie.match(new RegExp('(^| )FastgptKey=([^;]+)'));
-    const authToken = match ? match[2] : null;
-
-    if (authToken) {
-      const expires = new Date();
-      expires.setMinutes(0, 0, 0); // 先重置到当前小时整点
-      expires.setMinutes(expires.getMinutes() + 1); // 设为下一个 30 分钟
-
-      document.cookie = `FastgptKey=${authToken}; expires=${expires.toUTCString()}; path=/`;
-      console.log('Cookie 过期时间已更新:', expires.toUTCString());
-    }
-  };
 
   const initSign = useRef(false);
   const { data, loading } = useRequest2(
@@ -239,6 +206,12 @@ const OutLink = (props: Props) => {
   useMount(() => {
     setIdEmbed(window !== top);
   });
+
+  // 使用replaceState防止缓存并保持同源
+  useEffect(() => {
+    const newURL = window.location.pathname + '?t=' + Date.now();
+    window.history.replaceState(null, '', newURL);
+  }, []);
 
   const RenderHistoryList = useMemo(() => {
     const Children = (

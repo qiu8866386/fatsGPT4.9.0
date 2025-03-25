@@ -192,7 +192,7 @@ const ChatHistorySlider = ({ confirmClearText }: { confirmClearText: string }) =
               userSelect={'none'}
               borderRadius={'md'}
               //历史对话记录字体大小
-              fontSize={'16px'}
+              fontSize={'14px'}
               _hover={{
                 bg: 'myGray.50',
                 '& .more': {
